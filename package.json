@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "concurrently": "^3.4.0",
-    "json-server": "^0.9.6"
+    "json-server": "^0.9.6",
+    "terminal-in-react": "^4.0.0"
   }
 }
