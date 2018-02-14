@@ -6,18 +6,28 @@ constructor (props){
 
   this.state = {
     zipcode:''
-  };
+  }
   this.inputUpdated = this.inputUpdated.bind(this);
+  this.submitZipCode = this.submitZipCode.bind(this);
+}
+submitZipCode(e){
+  e.preventDefault();
+
+  const { zipcode } = this.state;
+  const { onSubmit } = this.props;
+
+  onSubmit(zipcode);
 }
 inputUpdated(e){
   const { value } = e.target;
 
-  this.setState({ zipcode: value});
+  this.setState({ zipcode: value });
+
 }
   render(){
     return(
       <div className = "zip-form">
-      <form>
+      <form onSubmit = {this.submitZipCode}>
       <label htmlFor="zipcode">Zip Code </label>
       <input
       className ="form-control"
